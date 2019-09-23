@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Bike rentals</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="bikerentals.css">
+<script src="bikerentals.js"></script>
+
+</head>
+<body>
+
+<!--Nav-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"> <a class="navbar-brand" href="index.html">Bike Rental</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active"> <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a> </li>
+     
+    </ul>
+  </div>
+</nav>
+<!--page 1 start-->
+<section id="page1">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Select Your Bike</h1>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row" id="section1">
+      <div class="col table-responsive">
+        <table class="table m-auto" id="items">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Image</th>
+              <th scope="col">Product Type</th>
+              <th scope="col">Selection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="id_parent_1">
+              <th scope="row" id="id1"></th>
+              <td id="name1"></td>
+              <td id="price1"></td>
+              <td id="image1"></td>
+              <td id="prod1"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(0)">ADD TO CART</button></td>
+            </tr>
+            <tr id="id_parent_2">
+              <th scope="row" id="id2"></th>
+              <td id="name2"></td>
+              <td id="price2"></td>
+              <td id="image2"></td>
+              <td id="prod2"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(1)">ADD TO CART</button></td>
+            </tr>
+            <tr id="id_parent_3">
+              <th scope="row" id="id3"></th>
+              <td id="name3"></td>
+              <td id="price3"></td>
+              <td id="image3"></td>
+              <td id="prod3"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(2)">ADD TO CART</button></td>
+            </tr>
+            <tr id="id_parent_4">
+              <th scope="row" id="id4"></th>
+              <td id="name4"></td>
+              <td id="price4"></td>
+              <td id="image4"></td>
+              <td id="prod4"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(3)">ADD TO CART</button></td>
+            </tr>
+            <tr id="id_parent_5">
+              <th scope="row" id="id5"></th>
+              <td id="name5"></td>
+              <td id="price5"></td>
+              <td id="image5"></td>
+              <td id="prod5"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(4)">ADD TO CART</button></td>
+            </tr>
+            <tr id="id_parent_6">
+              <th scope="row" id="id6"></th>
+              <td id="name6"></td>
+              <td id="price6"></td>
+              <td id="image6"></td>
+              <td id="prod6"></td>
+              <td><button type="button" class="btn btn-primary" onclick="myFunc(5)">ADD TO CART</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+	
+<div class="container-fluid">
+	 <div class="row">
+    <div class="col-12 m-auto text-center">
+      <button type="button" class="btn btn-info btn-lg btn-block mt-4" id="next1" onclick="validate()">Checkout</button>
+		
+    </div>
+  </div>
+	
+	
+</section>
+<!--page 1 end-->
+<div class="jumbotron jumbotron-fluid" id="page2-title">
+    <div class="container">
+      <h1 class="display-4">Confirm your Order</h1>
+    </div>
+  </div>
+	
+<div class="container">
+  <div class="row" id="section2">
+    <div class="col-12 mt-5">
+      <h2 class="text-center" id="cartsec">CART ITEMS</h2>
+    </div>
+  </div>
+  <div class="row cart-row">
+    <div class="col-12 mt-4">
+      <table class="table m-auto" id="carttable">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Product ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Product Type</th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="cart-total"> <strong class="cart-total-title">Total</strong> <span class="cart-total-price" id="Total_amount">$0</span> </div>
+ 
+</div>
+
+	
+</div>
+<!--page 2 start-->
+<section id="page2"> 
+  <!--Main Content or Page area start-->
+  
+ <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Enter your Billing Details</h1>
+    </div>
+  </div>
+  <!--Bikes-->
+  <section class="container">
+    <div class="row"> 
+      
+      <!--Bike 1-->
+      <div class="col mt-4">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstName">First Name</label>
+              <input type="text" class="form-control" placeholder="First name" id="firstname">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputLastName">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" id="lastname">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose</option>
+                <option>New York</option>
+                <option>New Jersey</option>
+                <option>Texas</option>
+                <option>Arizona</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    
+    
+  </section>
+	
+	
+	<button type="button" class="btn btn-info btn-lg btn-block mt-4" id="next1" onclick="validate()">Checkout</button>
+	
+</section>
+
+<!--page 2 end--> 
+<!--Footer-->
+<footer class="container-fluid mt-5 p-3 bg-primary text-light">
+  <div class="row">
+    <div class="col">Bike Rental Demo by Payal Rajpurohit &copy; 2019</div>
+  </div>
+</footer>
+	<script src="cart.js"></script>
+</body>
+</html>
